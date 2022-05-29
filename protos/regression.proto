@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package regression;
+
+// The Linear Regression service definition
+service LinearRegression {
+
+    // Calculates the regression line to the given data
+    //
+    // Returns the posterior parameters as well as predictive posterior parameters
+    rpc PosteriorPredictive(RegressionData) returns (LRPosterior) {}
+}
+
+// The Linear Regression service definition
+service GaussianProcess {
+
+    // Calculates the regression function to the given data
+    //
+    // Returns the posterior parameters
+    rpc GaussianProcessRegression(RegressionData) returns (GPPosterior) {}
+}
+
+message NumpyArray {
+    bytes array_bytes = 1;
+    uint32 rows = 2;
+    uint32 cols = 3;
+}
+
+message RegressionData {
+    NumpyArray data = 1;
+    float sigma = 2;
+    NumpyArray regression_points = 3;
+}
+
+message LRPosterior {
+    NumpyArray mu_n = 1;
+    NumpyArray cov_n = 2;
+    NumpyArray y_mu = 3;
+    NumpyArray y_std = 4;
+}
+
+message GPPosterior {
+    NumpyArray mu_V = 1;
+    NumpyArray cov_V = 2;
+}
