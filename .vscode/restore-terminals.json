@@ -1,0 +1,47 @@
+{
+    "artificialDelayMilliseconds": 200,
+    "keepExistingTerminalsOpen": false,
+    "runOnStartup": true,
+    "terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "GP Server",
+                    "commands": [
+                        "export PYTHONPATH=$PYTHONPATH:$HOME/agh/sr/lab05-zadanie/ReverseProxyRegression/"
+                    ]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "LR Server",
+                    "commands": [
+                        "export PYTHONPATH=$PYTHONPATH:$HOME/agh/sr/lab05-zadanie/ReverseProxyRegression/"
+                    ]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "Client",
+                    "commands": [
+                        "export PYTHONPATH=$PYTHONPATH:$HOME/agh/sr/lab05-zadanie/ReverseProxyRegression/"
+                    ]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "bash",
+                    "commands": [
+                        "export PYTHONPATH=$PYTHONPATH:$HOME/agh/sr/lab05-zadanie/ReverseProxyRegression/"
+                    ]
+                }
+            ]
+        }
+    ]
+}
